@@ -4,9 +4,9 @@ This repository contains a full-stack application for building AI-powered resume
 
 - **Frontend:** React app built with Vite, providing user interface and Firebase integration.  
 - **Backend:** Node.js + Express REST API, handling data, auth, and business logic.  
-- **Database:** MongoDB Atlas for persistent data storage.  
+- **Database:** MongoDB Atlas for persistent data storage.Redis for caching and storing jobs.
 - **Authentication & Storage:** Firebase services.  
-- **Containerization:** Both frontend and backend can be run in Docker containers.
+- **Containerization:** For Redis .
 
 ---
 
