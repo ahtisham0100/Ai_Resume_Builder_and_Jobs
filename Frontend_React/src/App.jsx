@@ -68,7 +68,7 @@ if (typeof window !== 'undefined') {
   <Route path="/resume-builder" element={<h1>Resume Builder</h1>} />
   <Route path="/job-tracker" element={<h1>Job Tracker</h1>} />
   <Route path="/ai-jobs" element={<h1>AI Jobs</h1>} />
-  <Route path="/settings" element={<h1>Settings</h1>} />
+  <Route path="/profile-setting" element={<h1>Settings</h1>} />
 
       </Routes>
     </>

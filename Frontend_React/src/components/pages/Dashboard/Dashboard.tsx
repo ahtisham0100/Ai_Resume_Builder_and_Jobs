@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileText, Target, Sparkles, Plus, Search } from "lucide-react";
 import { Link } from "react-router-dom"; 
+import { useAuthProvider } from "@/contextProvider/AuthProvider";
 import axios from "axios";
 interface StatCardProps {
   title: string;
@@ -26,10 +27,13 @@ interface DashboardStatsProps {
 }
 
 export default function Dashboard() {
-  const stats = [
-    { title: "Resumes Created", value: 3, icon: FileText },
-    { title: "Jobs Applied", value: 12, icon: Target },
-    { title: "AI Suggestions", value: 5, icon: Sparkles },
+
+const {user} =  useAuthProvider();
+console.log("User Data:", user);
+const stats = [
+    { title: "Resumes Created", value: user?.resumeCount || 0, icon: FileText },
+    { title: "Jobs Applied", value: user?.jobCount || 0, icon: Target },
+    { title: "AI Suggestions", value: user?.aiSuggestionCount || 0, icon: Sparkles },
   ];
 
   const actions = [
@@ -54,11 +58,11 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className=".dashboard p-8 flex flex-col gap-6 mt-16">
+    <div className="flex flex-col gap-6 mt-16">
       {/* Welcome Header */}
       <div className="text-center space-y-2">
         <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-          Welcome 
+          Welcome, {user?.displayName || "User"}!  
         </h1>
         <p className="text-lg text-muted-foreground">
           to AI Resume and Jobs Portal

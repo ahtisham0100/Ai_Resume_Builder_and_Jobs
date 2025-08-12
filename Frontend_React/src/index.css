@@ -9,7 +9,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -189,15 +188,16 @@ border: 1px solid whitesmoke;
 
 
 .bg-nav-active {
-  background-color: #6c63e2c4; /* dark blue or adjust as needed */
-color: #e4e5ee;
+    background: linear-gradient(60deg, #0040f180, #760bcedc);
+  color: white;
+backdrop-filter: blur(10px);
 }
-.bg-nav-active:hover{
-  color: #000;
+.bg-nav-active:hover {
+  color: #ffffff;
+  background: linear-gradient(60deg, #3f70f7, #920cff);
+border:1px solid var(--primary)
 }
-.text-nav-active-foreground {
-  color: #f8eeee; /* white text for active nav */
-}
+
 .shadow-md {
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
 }
@@ -205,12 +205,39 @@ color: #e4e5ee;
   color: #4b5563;
 }
 .hover\:bg-nav-hover\/20:hover {
-  background-color: rgba(7, 38, 238, 0.507); /* adjust color as needed */
-}
+    background: linear-gradient(45deg, #0040f15d, #760bce80);
+backdrop-filter: blur(30px);
+border:1px solid var(--primary)
+  }
 .hover\:text-nav-hover-foreground:hover {
-  color: #e4e5ee; /* hover text color */
+  color: #ffffff; /* hover text color */
 } 
 
-body {
-  height: max-content ;
+
+
+
+.nav-animated-bg {
+  background: var(--secondary);
+  background-size: 600% 600%;
+}
+
+
+@layer base {
+  body {
+    @apply pt-11; /* same as navbar height */
+padding: 2em;
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none;                  /* Chrome, Safari, Edge */
+}
+
+.text-card-foreground:hover { 
+padding: 1em;
+  border: 2px solid var(--primary);
+  background: -webkit-linear-gradient(45deg, #0040f15d, #760bce80);
+color: var(--primary);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
 }

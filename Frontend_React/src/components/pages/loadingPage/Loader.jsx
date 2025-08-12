@@ -3,7 +3,7 @@ import React from "react";
 const Loader = () => {
     return (
         <div
-            className="backdrop-blur-md rounded-2xl l p-10 flex flex-col items-center"
+            className="fixed inset-0 flex items-center justify-center backdrop-blur-md rounded-2xl p-10 z-50"
            
         >
             <div className="flex space-x-2 mb-6">
