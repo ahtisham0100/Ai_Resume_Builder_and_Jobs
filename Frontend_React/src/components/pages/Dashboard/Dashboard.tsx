@@ -58,11 +58,11 @@ const stats = [
   ];
 
   return (
-    <div className="flex flex-col gap-6 mt-16">
+    <div className="flex flex-col gap-6 mt-16 p-6">
       {/* Welcome Header */}
       <div className="text-center space-y-2">
         <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-          Welcome, {user?.displayName || "User"}!  
+          Welcome, {"User"}!  
         </h1>
         <p className="text-lg text-muted-foreground">
           to AI Resume and Jobs Portal

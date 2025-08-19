@@ -224,8 +224,7 @@ border:1px solid var(--primary)
 
 @layer base {
   body {
-    @apply pt-11; /* same as navbar height */
-padding: 2em;
+    @apply pt-15; /* same as navbar height */
   }
 }
 
@@ -234,9 +233,8 @@ body::-webkit-scrollbar {
 }
 
 .text-card-foreground:hover { 
-padding: 1em;
   border: 2px solid var(--primary);
-  background: -webkit-linear-gradient(45deg, #0040f15d, #760bce80);
+  /* background: -webkit-linear-gradient(45deg, #0040f15d, #760bce80); */
 color: var(--primary);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease-in-out;

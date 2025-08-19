@@ -70,9 +70,8 @@ export default function Navbar() {
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
                   <Button
-                    variant="ghost"
                     size="sm"
-                    className="h-9 w-9 p-0 !bg-nav-hover hover:bg-nav-hover hover:text-nav-hover-foreground"
+                    className="h-9 w-9 p-0 hover:bg-yellow-500 hover:text-yellow-500"
                     aria-label="Toggle menu"
                   >
                     <Menu className="h-4 w-4" />

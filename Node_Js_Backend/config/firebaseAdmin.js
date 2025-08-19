@@ -1,11 +1,20 @@
-import admin from "firebase-admin"
-// Initializing firebase admin
+import admin from "firebase-admin";
+
+const { PROJECT_ID, CLIENT_EMAIL, PRIVATE_KEY } = process.env;
+
+if (!PROJECT_ID || !CLIENT_EMAIL || !PRIVATE_KEY) {
+  console.log(PRIVATE_KEY , CLIENT_EMAIL , PROJECT_ID)
+  throw new Error(
+    "Missing Firebase environment variables. Check your .env file!"
+  );
+}
+
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert({
-      projectId: process.env.PROJECT_ID,
-      clientEmail: process.env.CLIENT_EMAIL,
-      privateKey: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'), // handle multiline
+      projectId: PROJECT_ID,
+      clientEmail: CLIENT_EMAIL,
+      privateKey: PRIVATE_KEY.replace(/\\n/g, "\n"), // converts escaped \n to real line breaks
     }),
   });
 }
